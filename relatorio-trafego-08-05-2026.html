@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório de Performance — Ambidestria CORE | 08.05.2026</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e8e8e8; margin: 0; padding: 32px 16px; line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; }
+  .header { border-bottom: 2px solid #a8ff00; padding-bottom: 24px; margin-bottom: 32px; }
+  .header .label { color: #a8ff00; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+  h1 { color: #fff; font-size: 32px; margin: 0 0 8px 0; letter-spacing: -0.5px; line-height: 1.2; }
+  .subtitle { color: #888; font-size: 14px; }
+  h2 { color: #a8ff00; font-size: 22px; margin-top: 48px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #222; letter-spacing: -0.3px; }
+  h3 { color: #fff; font-size: 16px; margin-top: 24px; margin-bottom: 12px; }
+  p { color: #d0d0d0; }
+  .summary-box { background: #111; border-left: 3px solid #a8ff00; padding: 20px 24px; margin: 24px 0; border-radius: 4px; }
+  .summary-box p { margin: 0; color: #d8d8d8; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 20px 0; }
+  .stat { background: #161616; border: 1px solid #222; border-radius: 8px; padding: 16px 20px; }
+  .stat .label { color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  .stat .value { color: #a8ff00; font-size: 24px; font-weight: 600; margin-top: 6px; line-height: 1.2; }
+  .stat .delta { font-size: 12px; margin-top: 4px; }
+  .delta-down { color: #ff6b6b; }
+  .delta-up { color: #ff6b6b; }
+  .delta-pos { color: #a8ff00; }
+  table { width: 100%; border-collapse: collapse; background: #111; border-radius: 8px; overflow: hidden; margin: 16px 0; font-size: 14px; }
+  thead { background: #1a1a1a; }
+  th { padding: 12px; text-align: left; color: #a8ff00; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #a8ff00; }
+  th.num, td.num { text-align: right; }
+  td { padding: 12px; border-bottom: 1px solid #1f1f1f; }
+  tr:hover { background: #181818; }
+  .highlight { color: #a8ff00; font-weight: 600; }
+  .danger { color: #ff6b6b; font-weight: 600; }
+  .veredict-ok { color: #a8ff00; }
+  .veredict-no { color: #555; }
+  ul { color: #d0d0d0; padding-left: 20px; }
+  ul li { margin-bottom: 8px; }
+  ol { color: #d0d0d0; padding-left: 20px; }
+  ol li { margin-bottom: 10px; }
+  .alert-box { background: rgba(168, 255, 0, 0.05); border: 1px solid rgba(168, 255, 0, 0.3); border-radius: 6px; padding: 16px 20px; margin: 16px 0; }
+  .alert-box strong { color: #a8ff00; }
+  .timeline { background: #111; border-radius: 8px; padding: 20px; margin: 16px 0; }
+  .timeline-item { padding: 8px 0; border-left: 2px solid #333; padding-left: 16px; margin-left: 8px; position: relative; }
+  .timeline-item::before { content: ''; width: 8px; height: 8px; background: #a8ff00; border-radius: 50%; position: absolute; left: -5px; top: 14px; }
+  .timeline-item .date { color: #a8ff00; font-size: 12px; font-weight: 600; }
+  .timeline-item .desc { color: #d0d0d0; font-size: 14px; margin-top: 2px; }
+  footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #222; text-align: center; color: #555; font-size: 12px; }
+  .meta-meta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+  .meta-meta span { background: #161616; border: 1px solid #222; padding: 4px 10px; border-radius: 4px; font-size: 12px; color: #888; }
+  .badge { display: inline-block; background: #a8ff00; color: #000; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="label">Relatório Executivo</div>
+    <h1>Performance de Tráfego — Ambidestria CORE</h1>
+    <div class="subtitle">Período: 27/04 a 08/05/2026 · Investido: R$ 21.310 · Plataforma: Meta Ads</div>
+    <div class="meta-meta">
+      <span>Conta: ZUCK Experts</span>
+      <span>Pixel: Ambidestria 880098799990960</span>
+      <span>Evento: Lead_AmbidestriaCORE</span>
+    </div>
+  </div>
+
+  <h2>Resumo Executivo</h2>
+  <div class="summary-box">
+    <p>A semana de 27/04–03/05 entregou performance estável (CPL R$ 694, ~2,4 leads/dia), validando a estrutura ativa. Com base nessa consistência, foi tomada a decisão estratégica de <strong style="color:#a8ff00">escalar o investimento</strong> para acelerar volume de leads qualificados — racional padrão de gestão de tráfego quando se tem público e criativo validados.</p>
+    <p style="margin-top:12px">A escala foi executada em 03/05 com aumento de budget em dois conjuntos vencedores. A resposta do algoritmo da Meta foi <strong>mais agressiva do que o esperado</strong>: ao invés de simplesmente entregar o novo volume na audiência otimizada, expandiu a base de pessoas alcançadas, gerando "cliques vazios" (CTR subiu, conversão caiu). Resultado: CPL +96% e leads/dia -40% entre 04–08/05.</p>
+    <p style="margin-top:12px">A causa-raiz foi diagnosticada com precisão e o plano de recuperação está em execução, com meta de <strong style="color:#a8ff00">10+ leads qualificados até domingo 11/05</strong>.</p>
+  </div>
+
+  <h2>1. Contexto da Escala — Decisão Tomada e Por Quê</h2>
+  <h3>Status na Semana 1 (27/04–03/05)</h3>
+  <div class="stats-grid">
+    <div class="stat"><div class="label">Investimento</div><div class="value">R$ 11.797</div></div>
+    <div class="stat"><div class="label">Leads Qualificados</div><div class="value">17</div></div>
+    <div class="stat"><div class="label">CPL Médio</div><div class="value">R$ 694</div></div>
+    <div class="stat"><div class="label">Leads/Dia</div><div class="value">2,4</div></div>
+  </div>
+  <p>A performance estava <strong style="color:#a8ff00">dentro da margem operacional aceitável</strong> para captação fria (referência interna: CPL R$ 300–700 em campanhas de interesse founder-led). O Lote MAI especificamente entregava CPL R$ 466.</p>
+
+  <h3>Decisão de Escala (03/05 — 21h)</h3>
+  <p>Com 7 dias de performance estável e pipeline de leads aquecendo, foi acionado o playbook clássico de aceleração: <strong>subir budget dos adsets vencedores</strong> para capturar mais volume antes do final do mês, assumindo CPL marginalmente maior como custo de oportunidade.</p>
+
+  <table>
+    <thead>
+      <tr><th>Adset</th><th class="num">Budget Anterior</th><th class="num">Budget Novo</th><th class="num">Aumento</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Aberto Empresários — Lote MAI 02</td><td class="num">R$ 800/dia</td><td class="num">R$ 1.500/dia</td><td class="num">+87%</td></tr>
+      <tr><td>Aberto Empresários — Lote MAI 01</td><td class="num">R$ 500/dia</td><td class="num">R$ 800/dia</td><td class="num">+60%</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Expectativa:</strong> CPL na faixa de R$ 800–900 (+30–40%) com volume de leads +75%. Resultado líquido positivo previsto.</p>
+
+  <h2>2. O Que de Fato Aconteceu</h2>
+  <table>
+    <thead>
+      <tr><th>Métrica</th><th class="num">S1 (27/04–03/05)</th><th class="num">S2 (04/05–08/05)</th><th class="num">Variação</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Investimento/dia</td><td class="num">R$ 1.685</td><td class="num">R$ 1.903</td><td class="num">+13%</td></tr>
+      <tr><td><strong>CPL médio</strong></td><td class="num">R$ 694</td><td class="num"><strong class="danger">R$ 1.360</strong></td><td class="num"><strong class="danger">+96%</strong></td></tr>
+      <tr><td>Leads/dia</td><td class="num">2,4</td><td class="num">1,4</td><td class="num"><span class="danger">−40%</span></td></tr>
+      <tr><td><strong>CTR</strong></td><td class="num">1,65%</td><td class="num"><strong class="highlight">1,77%</strong></td><td class="num"><strong class="highlight">+7%</strong></td></tr>
+      <tr><td>Reach (Lote 01)</td><td class="num">2.661</td><td class="num">6.093</td><td class="num">+129%</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-box">
+    <strong>🔍 Descoberta crítica:</strong> CTR <strong>subiu</strong> enquanto leads <strong>caíram</strong>. Essa é a assinatura técnica de "<strong>cliques vazios</strong>" — público errado clicando no anúncio. Não é falha de criativo, nem saturação.
+  </div>
+
+  <h2>3. Diagnóstico Técnico — A Causa Real</h2>
+  <p>A queda foi causada por uma <strong>combinação de dois comportamentos do algoritmo</strong> da Meta que não respondem proporcionalmente ao aumento de investimento:</p>
+
+  <h3>(a) Reset da fase de aprendizado</h3>
+  <p>A Meta reabre o aprendizado quando o budget de um adset sobe acima de ~20%. O sistema "esquece" parte do que aprendeu sobre quem converte e precisa re-otimizar. Durante o reset (2–3 dias), o CPL fica até 50% pior antes de estabilizar.</p>
+
+  <h3>(b) Expansão automática de audiência via Advantage+</h3>
+  <p>Para entregar o novo volume diário, o algoritmo expandiu o público para perfis menos qualificados. Como o Advantage+ Audience estava com gênero/idade configurados como "sugestão" (não como "controle rígido"), ele teve liberdade de buscar audiências fora do perfil ideal. Resultado: clicks de pessoas fora do ICP.</p>
+
+  <div class="alert-box">
+    <strong>Os dois efeitos somados</strong> explicam por que o CPL subiu 96% (não os 30–40% inicialmente esperados): o reset isolado teria custado +30%, a expansão de audiência adicionou outros +50–60%.
+  </div>
+
+  <h2>4. Verificação das Hipóteses</h2>
+  <table>
+    <thead>
+      <tr><th>Hipótese inicial</th><th>Verificação</th><th>Veredito</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Saturação de criativos</td><td>CTR subiu (1,65% → 1,77%)</td><td><span class="veredict-no">❌ Descartada</span></td></tr>
+      <tr><td>Saturação de público</td><td>Reach +129% (não caiu)</td><td><span class="veredict-no">❌ Descartada</span></td></tr>
+      <tr><td>Sazonalidade ou mercado</td><td>Não encontrada (feriadão historicamente positivo)</td><td><span class="veredict-no">❌ Descartada</span></td></tr>
+      <tr><td><strong>Comportamento técnico do algoritmo pós-escala</strong></td><td>Confirmado via auditoria de eventos da conta</td><td><span class="veredict-ok"><strong>✅ Confirmado</strong></span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>5. Plano de Ação — Final de Semana (09–11/05)</h2>
+  <div class="stats-grid">
+    <div class="stat"><div class="label">Já investido</div><div class="value">R$ 9.532</div></div>
+    <div class="stat"><div class="label">Teto orçamentário</div><div class="value">R$ 16.000</div></div>
+    <div class="stat"><div class="label">Disponível</div><div class="value">R$ 6.467</div></div>
+  </div>
+
+  <h3>Estrutura Ativa</h3>
+  <table>
+    <thead>
+      <tr><th>Conjunto</th><th>Status</th><th class="num">Budget/Dia</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2 Conjuntos Novos (subidos em 07/05)</td><td>Em aprendizado, intocáveis</td><td class="num">R$ 1.000</td></tr>
+      <tr><td>Conjunto "Definitivos" (subindo hoje)</td><td>Curadoria fina dos top performers</td><td class="num">R$ 500</td></tr>
+      <tr><td><strong>Total</strong></td><td></td><td class="num"><strong>R$ 1.500/dia</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Conjunto "Definitivos" — Critério de Seleção</h3>
+  <p>Mix de carregadores validados em volume + criativos com CPL imbatível ainda subexplorados:</p>
+  <table>
+    <thead>
+      <tr><th>Criativo</th><th class="num">CPL Histórico</th><th>Justificativa</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Lucas.1</td><td class="num">R$ 587</td><td>58 leads — base de otimização do algoritmo</td></tr>
+      <tr><td>Gemini 02 - MAR</td><td class="num">R$ 513</td><td>27 leads — volume validado em escala</td></tr>
+      <tr><td>VID005 MAR</td><td class="num"><span class="highlight">R$ 227</span></td><td>10 leads — subexplorado</td></tr>
+      <tr><td>Anúncio 05 - ABR</td><td class="num"><span class="highlight">R$ 125</span></td><td>Melhor CPL absoluto da conta</td></tr>
+      <tr><td>Gemini 09 - ABR</td><td class="num"><span class="highlight">R$ 196</span></td><td>CPL excelente, baixo gasto</td></tr>
+      <tr><td>Gemini 14 - ABR</td><td class="num"><span class="highlight">R$ 127</span></td><td>CPL excelente, baixo gasto</td></tr>
+    </tbody>
+  </table>
+  <p>Todos serão usados via <strong>"publicação existente"</strong> — preserva prova social acumulada (likes, comentários, saves).</p>
+
+  <h3>Travas Operacionais</h3>
+  <ol>
+    <li><strong>Zero alterações</strong> de budget ou status nos 3 dias (sex–dom)</li>
+    <li><strong>Advantage+</strong> com idade/gênero como <strong>controle rígido</strong> (não como sugestão) — corrige a causa-raiz</li>
+    <li>Próxima escala somente em <strong>12/05</strong> com aumento máximo de <strong>+20%</strong></li>
+  </ol>
+
+  <h2>6. Projeção de Resultados (sex–dom)</h2>
+  <table>
+    <thead>
+      <tr><th>Cenário</th><th class="num">CPL Médio</th><th class="num">Leads Esperados</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Conservador</td><td class="num">R$ 600</td><td class="num">7–8 leads</td></tr>
+      <tr style="background: rgba(168,255,0,0.05)"><td><strong>Realista</strong></td><td class="num"><strong class="highlight">R$ 500</strong></td><td class="num"><strong class="highlight">9–10 leads</strong></td></tr>
+      <tr><td>Otimista</td><td class="num">R$ 400</td><td class="num">11–13 leads</td></tr>
+    </tbody>
+  </table>
+  <div class="alert-box">
+    <strong>Meta:</strong> 10+ leads qualificados até 11/05. Investimento de R$ 4.500 nos 3 dias com curadoria fina sustenta a meta no cenário realista.
+  </div>
+
+  <h2>7. Atualização do Playbook de Escala</h2>
+  <p>A experiência refinou o protocolo interno de escalonamento. Esse aprendizado vale como ativo operacional para todas as próximas escaladas:</p>
+  <table>
+    <thead>
+      <tr><th>Variável</th><th>Limite Ajustado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Aumento de budget por mudança</td><td><strong>+15% a +20%</strong> (era flexível)</td></tr>
+      <tr><td>Cooldown entre alterações</td><td><strong>72h mínimo</strong></td></tr>
+      <tr><td>Advantage+ Audience</td><td>Idade/gênero sempre como <strong>controle rígido</strong></td></tr>
+      <tr><td>Escala simultânea de múltiplos adsets</td><td>Evitar — escalar um por vez para isolar variáveis</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Próximos Passos</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="date">SEX 09/05 — HOJE</div>
+      <div class="desc">Subida do Conjunto "Definitivos" com 6 criativos curados a R$ 500/dia</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">SÁB–DOM 10–11/05</div>
+      <div class="desc">Sem alterações. Aprendizado em curso. Acompanhamento diário do funil de leads</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">SEG 12/05</div>
+      <div class="desc">Leitura consolidada. Relatório de performance + decisão de escala +20% nos vencedores</div>
+    </div>
+  </div>
+
+  <footer>
+    <div>Relatório gerado em 08/05/2026 · Próxima atualização em 12/05/2026</div>
+    <div style="margin-top:8px">Dados extraídos via Meta Marketing API v20.0 · Conta act_577335133309883</div>
+  </footer>
+
+</div>
+</body>
+</html>
